@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <title>Chat Bot App</title>
+
+    
 </head>
 <body>
     <h1 class="title">Restaurant ChatBox</h1>
@@ -28,22 +30,18 @@
                     <span>bluebird 26 july 23:40</span>
                 </p>
             </li>
-
-            <!-- <li class="message-feedback">
-                <p class="feedback" id="feedback">
-                    someone is typing
-                </p>
-            </li> -->
         </ul>
 
-        <form action="" class="message-form" id="message-form">
-            <input type="text" name="message" id="message-input" class="message-input">
+        <form action="/bot/message" method="post" class="message-form">
+            <input type="text" name="message" class="message-input">
             <div class="v-divider"></div>
             <button type="submit" class="send-button">Send <span><i class="fa fa-paper-plane"></i></span></button>
         </form>
     </div>
 
     <script src="/socket.io/socket.io.js"></script>
-    <script src="main.js"></script>
+    <script>
+        socket = io()
+    </script>
 </body>
 </html>
