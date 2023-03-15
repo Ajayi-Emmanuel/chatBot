@@ -15,11 +15,11 @@ const server = app.listen(PORT, () => {
 // const botRoute = require("./routes/bot") 
 
 app.use(express.json())
-app.use(session({
-  secret: process.env.SESSION_SECRET,
-  resave: true,
-  saveUninitialized: true
-}));
+// app.use(session({
+//   secret: process.env.SESSION_SECRET,
+//   resave: true,
+//   saveUninitialized: true
+// }));
 // app.set('view engine', 'ejs')
 // app.use('/bot', botRoute)
 
