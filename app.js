@@ -2,7 +2,6 @@ const express = require("express");
 const path = require("path");
 require("dotenv").config();
 const session = require("express-session");
-const { json } = require("stream/consumers");
 
 const app = express();
 const PORT = process.env.PORT;
@@ -84,6 +83,8 @@ io.on("connection", (socket) => {
           case "3":
           case "4":
           case "5":
+          case "6":
+          case "7":
             const inputedIndex = parseInt(message.input);
             if(fastFood.hasOwnProperty(inputedIndex)){
               const selectedItem = fastFood[inputedIndex];
