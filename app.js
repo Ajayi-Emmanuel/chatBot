@@ -26,7 +26,7 @@ const orderHistory = [];
 
 app.use(express.json())
 const sessionMiddleware = session({
-  secret: process.env.SESSION_SECRET,
+  secret: process.env.SESSION_SECRET || "secret",
   resave: true,
   saveUninitialized: true
 });
