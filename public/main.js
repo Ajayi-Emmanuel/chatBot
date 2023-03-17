@@ -37,9 +37,7 @@ function sendMessage(){
 }
 
 socket.on('bot-message', (message) => {
-    // console.log(message)
     addMessageToUI(false, message)
-    // socket.emit('bot-message', message)
 })
 
 function addMessageToUI(isOwnMessage, message){
