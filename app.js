@@ -89,7 +89,7 @@ io.on("connection", (socket) => {
               const selectedItem = fastFood[inputedIndex];
               state.currentOrder.push(selectedItem);
               await botMessage(
-                `${selectedItem} has been added to your order. "\n"Do you want to add more items to your order? Type numbers. If not, type 99 to checkout.`
+                `${selectedItem} has been added to your order. Do you want to add another item? Select 1 to add another item or 99 to checkout.`
               );
             }else{
               await botMessage(

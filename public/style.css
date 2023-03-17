@@ -121,3 +121,12 @@ body{
     width: 2px;
     background-color: #f6f6f6;
 }
+
+@media screen and (max-width: 768px){
+    .message-container{
+        width: 100%;
+    }
+    .message-form{
+        width: 100%;
+    }
+}
