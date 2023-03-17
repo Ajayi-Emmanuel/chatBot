@@ -64,7 +64,7 @@ body{
     padding: 8px 12px;
     margin: 12px;
     max-width: 250px;
-    font-size: 18px;
+    font-size: 14px;
     word-wrap: break-word;
 }
 
@@ -86,7 +86,7 @@ body{
 .message-left > p > span, .message-right > p > span{
     display: block;
     font-style: italic;
-    font-size: 12px;
+    font-size: 10px;
     margin-top: 4px;
 }
 

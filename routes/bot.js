@@ -1,7 +1,7 @@
 const botroute = require("express").Router();
 
 botroute.get('/', (req, res) => {
-    res.render("index.html")
+    res.sendFile(__dirname + "/index.html")
 })
 
 

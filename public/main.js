@@ -1,9 +1,22 @@
 const socket = io()
 
-const messageContainer = document.getElementById('message-container')
-const nameInput = document.getElementById('name-input')
+const nameInput = prompt("Enter your name: ");
+
+document.querySelector('a').innerText = nameInput
+// document.getElementById('message').innerHTML = `
+//         Welcome to my restaurant ${nameInput}
+        
+//         <li>Select 1 to Place an order</li>
+//         <li>Select 99 to checkout order</li>
+//         <li>Select 98 to see order history</li>
+//         <li>Select 97 to see current order</li>
+//         <li>Select 0 to cancel order</li>
+//         <span> chatbot ${new Date().toLocaleString()}</span>
+// `
+const messageContainer = document.getElementById('message-container') 
 const messageForm = document.getElementById('message-form')
 const messageInput = document.getElementById('message-input')
+
 
 
 messageForm.addEventListener('submit', e => {
@@ -13,26 +26,28 @@ messageForm.addEventListener('submit', e => {
 
 function sendMessage(){
     if(messageInput.value === '') return
-    const data = {
-        name: nameInput.value,
-        message: messageInput.value,
+    const message = {
+        name: nameInput,
+        input: messageInput.value,
         dateTime: new Date().toLocaleDateString()
     }
-    socket.emit('message', data)
-    addMessageToUI(true, data)
+    addMessageToUI(true, message)
+    socket.emit('user-message', message)
     messageInput.value = ''
 }
 
-socket.on('chat-message', data => {
-    addMessageToUI(false, data)
+socket.on('bot-message', (message) => {
+    // console.log(message)
+    addMessageToUI(false, message)
+    // socket.emit('bot-message', message)
 })
 
-function addMessageToUI(isOwnMessage, data){
+function addMessageToUI(isOwnMessage, message){
     const element = `
     <li class="${isOwnMessage ? 'message-right' : 'message-left'}">
         <p class="message">
-            ${data.message}
-            <span>${data.name} ${data.dateTime}</span>
+            ${message.input}
+            <span>${message.name} ${message.dateTime}</span>
         </p>
     </li>
     `
